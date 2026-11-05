@@ -1,0 +1,29 @@
+// Description:
+//    Déclaration de variables
+//
+// Resultats:
+//    e = 6.5
+//    ok
+
+{
+    int a = 5;
+    float b = 1.5;
+    float e;
+    boolean c = true;
+    boolean d;
+    boolean f;
+    
+
+    e = a + b;
+    println("e = ", e);
+
+    d = !c;
+
+    f = c && d || c;
+
+    if (!f) {
+        println("Erreur");
+    } else {
+        println("ok");
+    }
+}

@@ -1,0 +1,10 @@
+// Description:
+//    Signature des opérateurs						
+//    -> affectation sans type et sans définition de la variable préalablement
+//
+// Resultats:
+//    Erreur : 
+
+{
+    x = 2;
+}

@@ -1,0 +1,11 @@
+// Description :
+// Déclaration de champ incorrect (affectation d'une mauvaise valeur à un champ)
+//
+// Résultat :
+//      Erreur : 
+
+class A {
+    int a = true;
+}
+
+

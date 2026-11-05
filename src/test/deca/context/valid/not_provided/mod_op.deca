@@ -1,0 +1,11 @@
+// Description:
+//    Signature des opérateurs
+//    -> modulo
+//
+// Resultats:
+//    ok
+
+{
+    int y = 5;
+    int x = 10 % y;
+}

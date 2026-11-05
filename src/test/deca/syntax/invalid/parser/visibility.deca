@@ -1,0 +1,12 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (erreur dans l'écriture de la visiblité et du type de l'attribut)
+//
+// Resultats:
+//    ligne 10 : Erreur, visibilité écrite après le type de l'attribut
+
+class A{
+    int protected x;
+}
+

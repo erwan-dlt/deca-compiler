@@ -1,0 +1,12 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (pas de parenthèses pour la condition d'un while)
+//
+// Resultats:
+//    ligne 13 : Erreur, il manque les parenthèses à la condition du while
+
+{
+    int x = 5;
+    while x > 0 {x = x - 1;}
+}

@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (parenthèse non fermée)
+//
+// Resultats:
+//    ligne 10 : Erreur, parenthèse non fermée
+
+{
+    (x+y;
+}

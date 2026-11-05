@@ -1,0 +1,19 @@
+// Description :
+// test pour l'inclusion de fichiers
+//
+// Resultats :
+//  ok
+
+
+#include "class_for_include.deca"
+
+{
+    A a = new A(6);
+    
+    if (a.getA() == 6){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+}
+

@@ -1,0 +1,12 @@
+// Description:
+//    Affectation des attributs
+//    -> affectation avec variable définie
+//      plus haut dans le programme
+//
+// Resultats:
+//    ok
+
+{
+    int x = 1;
+    int y = x + 1;
+}

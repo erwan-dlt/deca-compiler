@@ -1,0 +1,35 @@
+// Description :
+// test du contexte pour instanceof (sans objet)
+//
+// Resultats :
+//       
+
+{
+    int a = 5;
+    float b = 1.5;
+    boolean c = true;
+
+    if (a instanceof int) {
+        println("a is int : ok");
+    } else {
+        println("a is not int");
+    }
+
+    if (a/2 instanceof float) {
+        println("a/2 is float : ok");
+    } else {
+        println("a/2 is not float");
+    }
+
+    if (b instanceof float) {
+        println("b is float : ok");
+    } else {
+        println("b is not float");
+    }
+
+    if (c instanceof boolean) {
+        println("c is boolean : ok");
+    } else {
+        println("c is not boolean");
+    }
+}

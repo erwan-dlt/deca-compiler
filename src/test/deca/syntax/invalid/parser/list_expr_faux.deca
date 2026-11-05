@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (virgule non suivie par une expression dans une instruction)
+//
+// Resultats:
+//    ligne 13 : Erreur, virgule non suivie par une expression
+
+{
+    print(x,y,);
+}

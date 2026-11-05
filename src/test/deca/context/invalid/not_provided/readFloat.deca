@@ -1,0 +1,10 @@
+// Description :
+// readFloat affecté à une variable de type != float
+//
+// Résultat :
+//      Erreur : ligne 9 - le type de la variable de réception est incorrect
+
+{
+    boolean x;
+    x = readFloat();
+}

@@ -1,0 +1,13 @@
+// Description :
+// test de syntaxe pour this
+//
+// Resultats :
+// ok
+
+class A{
+    int x;
+
+    void f(){
+        this.x = 1;
+    }
+}

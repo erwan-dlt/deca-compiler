@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe faux pour new
+//
+// Resultats :
+//      Erreur : manque parenthèses
+
+{
+    A a = new A;
+}

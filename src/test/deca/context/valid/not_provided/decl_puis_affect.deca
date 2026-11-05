@@ -1,0 +1,11 @@
+// Description:
+//    Affectation des attributs
+//    -> déclaration sans affectation puis affectation
+//
+// Resultats:
+//    ok
+
+{
+    int x;
+    x = 1;
+}

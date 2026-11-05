@@ -1,0 +1,19 @@
+// Description :
+// test de syntaxe pour inequality_expr
+//
+// Resultats :
+// ok
+
+{
+    if (x <= y) {
+        print("Less or Equal");
+    } else if (x >= y) {
+        print("Greater or Equal");
+    } else if (x < y) {  
+        print("Less");
+    } else if (x > y) {
+        print("Greater");
+    }
+
+    
+}   

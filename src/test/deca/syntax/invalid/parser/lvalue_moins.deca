@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (une soustraction n'est pas une lvalue)
+//
+// Resultats:
+//    ligne 10 : Erreur, x-y n'est pas une lvalue
+
+{
+    x - y = 5;
+}

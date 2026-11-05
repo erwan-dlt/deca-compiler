@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour assigner une expression (assign_expr)
+//
+// Resultats :
+// ok
+
+{
+    x = y + z;
+}

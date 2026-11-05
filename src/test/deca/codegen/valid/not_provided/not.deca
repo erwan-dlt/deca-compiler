@@ -1,0 +1,22 @@
+// Description:
+//    Test de not
+//
+// Resultats:
+// 
+
+{
+    boolean a = true;
+    boolean b = false;
+
+    if (!a) {
+        println("Erreur");
+    } else {
+        println("ok");
+    }
+
+    if (!b) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+}

@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (déclaration de classe)
+//
+// Resultats:
+//    ligne 10 : Erreur, erreur dans la déclaration du champ x
+
+class A{
+    x = 12;
+}

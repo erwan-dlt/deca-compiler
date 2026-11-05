@@ -1,0 +1,14 @@
+// Description:
+//    Affectation des attributs
+//    -> affectation explicite
+//
+// Resultats:
+//    x = 1
+//    y = 2.7
+//    z = true
+
+{
+    int x = 1;
+    float y = 1.5 + 1.2;
+    boolean z = true;
+}

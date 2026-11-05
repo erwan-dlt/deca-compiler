@@ -1,0 +1,14 @@
+// Description:
+//    Débordements lors de l’évaluation des expressions			
+//    Division par 0
+//
+// Resultats:
+//    Erreur : 
+
+{
+    int x = 10;
+    float y = 2.0;
+    float z;
+    z = 10 / (x - y*5);
+    println(z);
+}

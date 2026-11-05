@@ -1,0 +1,14 @@
+// Description:
+//    While / If then else					
+//    -> test du while avec une condition non booléenne
+//
+// Resultats:
+//    Erreur :
+
+{
+    int x = 5;
+    while (x) {
+        print(x);
+        x = x - 1;
+    }
+} 

@@ -1,0 +1,17 @@
+// Description:
+//    Test branche conditionnelle
+//    -> if else
+//
+// Resultats:
+//    ok
+
+{
+    float x = 1.0;
+    if ((x + 1 > 2)){
+        println("Erreur : x = 1.0 donc x + 1 = 2.0");
+    } 
+    else{
+        println("ok");
+    }
+}
+

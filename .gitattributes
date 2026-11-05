@@ -1,0 +1,6 @@
+*.ps binary
+*.pdf binary
+*.doc binary
+*.docx binary
+
+* text=auto eol=lf

@@ -1,0 +1,10 @@
+// Description:
+//    Plus d'une extension de classe
+//
+// Resultats:
+//    Erreur : la classe est étendue par plus d'une classe
+
+class A extends B extends C{
+}
+
+

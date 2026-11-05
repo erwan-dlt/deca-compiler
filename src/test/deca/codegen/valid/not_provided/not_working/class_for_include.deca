@@ -1,0 +1,17 @@
+// Description :
+// classe créee pour tester le include
+//
+
+class A{
+    int a;
+
+    void A(int a){
+        this.a = a;
+    }
+
+    int getA(){
+        return this.a;
+    }
+}
+
+

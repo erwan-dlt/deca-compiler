@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (parenthèse fermante ouvrante pour printx)
+//
+// Resultats:
+//    ligne 10 : Erreur, parenthèse ouvrante manquante
+
+{
+    printx y);
+}

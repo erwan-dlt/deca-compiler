@@ -1,0 +1,14 @@
+// Description :
+// test de syntaxe pour declaration de classes
+//
+// Resultats :
+// ok
+
+class A{    
+}
+
+class B{
+}
+
+{
+}

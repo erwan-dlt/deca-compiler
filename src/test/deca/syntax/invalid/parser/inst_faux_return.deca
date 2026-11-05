@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (point virgule manquant après le return)
+//
+// Resultats:
+//    ligne 10 : Erreur, point virgule manquant
+
+{
+    return x
+}

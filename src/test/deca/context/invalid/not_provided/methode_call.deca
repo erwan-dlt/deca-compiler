@@ -1,0 +1,17 @@
+// Description :
+// Test d'appel de méthode sur un type qui ne définit pas cette méthode
+//
+// Résultat :
+//      Erreur : ligne 15 - la méthode n'existe pas pour le type sur lequel on l'applique
+
+class A {
+    int a;
+    void method() {
+        print("ok");
+    }
+}
+
+{
+    int x = 1;
+    x.method(); 
+}

@@ -1,0 +1,9 @@
+// Description:
+//    tests de programme incorrect syntaxiquement 
+//
+// Resultats:
+//    ligne 8 : Erreur, un identifiant ne commence pas par un chiffre
+
+{
+    int 1abc;
+}

@@ -1,0 +1,73 @@
+// Description:
+//    Test des opérations booléen (and)
+//
+// Resultats:
+//    ok
+//    ok
+//    ok
+//    ok
+//    ok
+//    ok
+//    ok
+//    ok
+
+{
+    boolean result1 = true && true ;
+    boolean result2 = true && false ;
+    boolean result3 = false && true ;
+    boolean result4 = false && false ;
+
+    boolean result5 = true || true ;
+    boolean result6 = true || false ;
+    boolean result7 = false || true ;
+    boolean result8 = false || false ;
+
+    if (result1) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (!result2) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (!result3) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (!result4) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (result5) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (result6) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (result7) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (!result8) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+}

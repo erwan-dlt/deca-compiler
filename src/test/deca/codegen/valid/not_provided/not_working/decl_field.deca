@@ -1,0 +1,49 @@
+// Description :
+// test pour la déclaration de classes avec champ sans initialisation
+// (vérification que les int sont initialisés à 0, les float à 0.0 , les objets à null et les booléens à false)
+//
+// Resultats :
+//  ok
+//  ok
+//  ok
+//  ok
+
+class Z{
+}
+
+class A{
+    int a;
+    float b;
+    boolean c;
+    Z z;
+}
+
+{
+    A a = new A();
+    
+    if (a.a == 0){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (a.b == 0.0){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (!a.c){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (a.z == null){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+}
+

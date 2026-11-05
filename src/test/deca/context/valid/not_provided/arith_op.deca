@@ -1,0 +1,13 @@
+// Description:
+//    Signature des opérateurs
+//    -> opérateurs arithmétiques
+//
+// Resultats:
+//    ok
+
+{
+    int x = 10 + 5;
+    float y = 1 - 1.5;
+    float z = 1.5 * 1;
+    float w = 1.5 / 1.5;
+}

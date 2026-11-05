@@ -1,0 +1,7 @@
+// Description :
+// test de lexique : string
+//
+// Resultats :
+// ok
+
+"" "Hello" "Hello \\n World"

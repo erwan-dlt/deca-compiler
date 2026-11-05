@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (après un constructeur : expression entre les parenthèses qui ne devrait pas y être)
+//
+// Resultats:
+//    ligne 10 : Erreur, problème dans le constructeur
+
+{
+    new MyClass(5);
+}

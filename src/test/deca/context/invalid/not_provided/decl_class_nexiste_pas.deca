@@ -1,0 +1,12 @@
+// Description:
+//    Déclaration d'une classe qui n'existe pas
+//
+// Resultats:
+//    Erreur : déclaration de classe qui n'existe pas
+
+class A{
+}
+
+{
+    A a = new B();
+}

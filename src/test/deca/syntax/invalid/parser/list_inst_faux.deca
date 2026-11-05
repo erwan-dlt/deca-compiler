@@ -1,0 +1,13 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (point virgule manquant entre les lignes 11 et 12)
+//
+// Resultats:
+//    ligne 11 : Erreur, point virgule terminant la ligne manquant
+
+{
+    int x = 1;
+    print(y)
+    return x;
+}

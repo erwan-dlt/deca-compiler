@@ -1,0 +1,12 @@
+// Description :
+// test de syntaxe pour inst
+//
+// Resultats :
+// ok
+
+{
+    return x;
+    while (x > 0) {
+        x = x - 1;
+    }
+}

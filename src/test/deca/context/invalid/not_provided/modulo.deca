@@ -1,0 +1,10 @@
+// Description:
+//    Signature des opérateurs						
+//    -> Opérateur arithmétique (modulo) avec autre chose que des int 
+//
+// Resultats:
+//    Erreur : src/test/deca/context/invalid/not_provided/modulo.deca:9:4: Operands must be int
+
+{
+    1 % 1.2; 
+}

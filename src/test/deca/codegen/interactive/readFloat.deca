@@ -1,0 +1,11 @@
+// Description:
+//    Test de readfloat
+//
+
+
+{
+    float x;
+    x = readFloat();
+    x = x*2;
+    println(x);
+}

@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour print
+//
+// Resultats :
+// ok
+
+{
+    print("Hello World");
+}

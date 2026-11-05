@@ -1,0 +1,20 @@
+// Description:
+//    Test de l'ordre d'évaluation dans des 
+//    expressions booléennes (et)
+//
+// Resultats:
+//    b = 0 
+//
+// comme on évalue seulement la première condition (fausse)
+// dans le &&, on n'incrémente pas b donc b toujours égal à 0
+
+{
+    int a = 0;
+    int b = 0;
+    if (a != 0 && (b = b+1) == 1){
+        println("Erreur : a = 0");
+    }
+    else {
+        println("b = ", b); 
+    }
+}

@@ -1,0 +1,12 @@
+// Description:
+//    Signature des opérateurs						
+//    -> deux affectations de même nom
+//
+// Resultats:
+//    Erreur : 
+
+{
+    int x = 1;
+    float x = 1.5;
+}
+

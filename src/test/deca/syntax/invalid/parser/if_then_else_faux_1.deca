@@ -1,0 +1,12 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (parenthèses manquantes autour de la condition du if)
+//
+// Resultats:
+//    ligne 11 : Erreur, parenthèses manquantes
+
+{
+    int x = 1;
+    if x < 2 {x = 0};
+}

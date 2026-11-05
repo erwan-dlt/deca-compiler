@@ -1,0 +1,15 @@
+// Description:
+//    test de programme correct syntaxiquement
+//    (déclaration de classe avec liste de déclaration de champs)
+//
+// Resultats:
+//    ok
+
+class A{
+    int a, b, c;
+    float x = 1.5, y = 2.0, z = 3.3;
+    boolean x = true, y, c = false;
+}
+
+
+

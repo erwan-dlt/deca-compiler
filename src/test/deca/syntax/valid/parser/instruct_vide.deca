@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour instruction vide
+//
+// Resultats :
+// ok
+
+{
+    ;
+}

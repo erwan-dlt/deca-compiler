@@ -1,0 +1,28 @@
+// Description :
+// test pour le cast
+//
+// Resultats :
+//  ok
+//  ok
+
+class A{
+    int a;
+}
+
+class B{
+    int b;
+}
+
+{
+    A a = new A();
+    float b = (float) a.a;
+
+    B b2 = (B) a;
+
+    if (b2 instanceof B) {
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+}
+

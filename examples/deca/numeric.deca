@@ -1,0 +1,6 @@
+{
+    float x = 2;
+    int whole = (int) (3.75);
+    println(-whole);
+    printlnx(x / 4.0);
+}

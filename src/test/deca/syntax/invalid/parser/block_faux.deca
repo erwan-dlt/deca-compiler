@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (accolade droite manquante pour le bloc)
+//
+// Resultats:
+//    ligne 10 : Erreur, accolade terminant le bloc manquante
+
+{
+    int x = 1;
+

@@ -1,0 +1,10 @@
+// Description :
+// Déclaration de classe dans le bloc main
+//
+// Résultat :
+//      Erreur : déclaration de classe dans le bloc main
+
+{
+    class A{
+    }
+}

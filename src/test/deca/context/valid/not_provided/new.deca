@@ -1,0 +1,12 @@
+// Description:
+//    Test contextuel pour new 
+//
+// Resultats:
+//     ok
+
+class A{}
+
+{
+    A a = new A();
+    println("ok");
+}

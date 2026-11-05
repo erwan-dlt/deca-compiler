@@ -1,0 +1,18 @@
+// Description:
+//    Test correct de cast pour le contexte (objet)
+//
+// Resultats:
+//    ok
+
+class A{
+    int a;
+}
+
+class B extends A{
+    float b;
+}
+
+{
+    A a = new A();
+    B b = (B)(a);
+}

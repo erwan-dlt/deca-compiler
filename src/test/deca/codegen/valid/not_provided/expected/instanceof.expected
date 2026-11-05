@@ -1,0 +1,4 @@
+a is int : ok
+a/2 is float : ok
+b is float : ok
+c is boolean : ok

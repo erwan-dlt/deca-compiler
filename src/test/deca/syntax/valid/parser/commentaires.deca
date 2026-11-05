@@ -1,0 +1,19 @@
+// Description :
+// test de syntaxe pour commentaires
+//
+// Resultats :
+// 
+
+{
+    //if (a == b){
+    //    println("a == b");
+    //}
+
+    /* if (a == b){
+        println("a == b");
+
+    } */
+
+    //while(a == b){
+}
+

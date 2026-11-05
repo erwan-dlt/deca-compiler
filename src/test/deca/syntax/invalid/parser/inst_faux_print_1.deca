@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (parenthèse fermante manquante pour print)
+//
+// Resultats:
+//    ligne 10 : Erreur, parenthèse fermante manquante
+
+{
+    print(y;
+}

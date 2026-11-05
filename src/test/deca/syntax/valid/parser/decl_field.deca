@@ -1,0 +1,16 @@
+// Description:
+//    test de programme correct syntaxiquement
+//    (déclaration de classe avec attributs)
+//
+// Resultats:
+//    ok
+
+/* class A{
+    int x;
+    float y = 2.0;
+    boolean b = 2 > 3;
+} */
+class A{
+    float y = 2.0;
+    boolean b = 2 > 3;
+}

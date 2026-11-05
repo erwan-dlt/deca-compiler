@@ -1,0 +1,16 @@
+// Description:
+//    Test valide de cast avec vérification du type dynamique
+//
+// Résultats:
+//    ok
+
+class A {
+}
+
+class B extends A {
+}
+
+{
+    A a = new B(); 
+    B b = (B)(a);  
+}

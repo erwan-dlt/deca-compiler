@@ -1,0 +1,40 @@
+// Description :
+// test pour instanceof (objet)
+//
+// Resultats :
+//  a is A : ok
+//  a is not B : ok
+//  b is not A : ok
+//  b is B : ok
+
+class A{
+}
+
+class B{
+}
+
+{
+    A a = new A();
+    B b = new B();
+    if (a instanceof A) {
+        println("a is A : ok");
+    } else {
+        println("a is not A : bizarre");
+    }
+    if (a instanceof B) {
+        println("a is B : bizarre");
+    } else {
+        println("a is not B : ok");
+    }
+    if (b instanceof A) {
+        println("b is A : bizarre");
+    } else {
+        println("b is not A : ok");
+    }
+    if (b instanceof B) {
+        println("b is B : ok");
+    } else {
+        println("b is not B : bizarre");
+    }
+}
+

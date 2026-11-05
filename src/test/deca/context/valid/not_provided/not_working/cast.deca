@@ -1,0 +1,12 @@
+// Description:
+//    Test correct de cast pour le contexte (sans objet)
+//
+// Resultats:
+//    ok
+
+{
+    int a;
+    float b = 3.14;
+
+    a = (int)(b);
+}

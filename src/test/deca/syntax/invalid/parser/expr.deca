@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (opérateur - incomplet)
+//
+// Resultats:
+//    ligne 10 : Erreur, expecting {'false', 'new', 'null', 'readInt', 'readFloat', 'this', 'true', '-', '(', '!', INT, FLOAT, IDENT, STRING}
+
+{
+    int x = 1 * 2 + 3 - ;
+}

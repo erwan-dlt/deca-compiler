@@ -1,0 +1,11 @@
+// Description :
+// test de syntaxe pour extension de classe
+//
+// Resultats :
+// ok
+
+class A{
+}
+
+class B extends A{
+}

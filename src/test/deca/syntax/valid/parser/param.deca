@@ -1,0 +1,17 @@
+// Description :
+// test de syntaxe pour param
+//
+// Resultats :
+// ok
+
+class A{
+    void A(int x, float y, boolean t){
+        x = 1;
+        y = 3.14;
+        t = true;
+    }
+
+    void toString(){
+        println(x);
+    }
+}

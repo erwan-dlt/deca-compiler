@@ -1,0 +1,11 @@
+// Description:
+//    Test d'une ligne sans instruction
+//
+// Resultats:
+// 
+
+{
+    int a = 1;
+    ;
+    println(a);
+}

@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (littéral booléen 'true' entre guillemets)
+//
+// Résultats:
+//    ligne 3 : Erreur, `true` ne doit pas être entre guillemets
+
+{
+    bool flag = 'true';
+}

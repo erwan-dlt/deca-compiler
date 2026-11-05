@@ -1,0 +1,16 @@
+// Description:
+//    Signature des opérateurs
+//    -> opérateurs unaires
+//
+// Resultats:
+//    ok
+
+{
+    int x = 10;
+    float y = 1.5;
+    boolean z = true;
+
+    x = -x;
+    y = -y;
+    z = !z;
+}

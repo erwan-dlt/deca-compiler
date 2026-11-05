@@ -1,0 +1,14 @@
+// Description:
+//    Initialisation des variables et champs		
+//    Initialisation dans une branche conditionnelle
+//
+// Resultats:
+//    Erreur : 
+
+{
+    int x;
+    if (true){
+        x = 0;
+    }
+    println(x);
+}

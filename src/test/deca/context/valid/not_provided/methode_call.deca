@@ -1,0 +1,16 @@
+// Description:
+//    Test contextuel pour l'appel d'une méthode
+//
+// Resultats:
+//     ok
+
+class A{
+    void m(){
+        println("ok");
+    }
+}
+
+{
+    A a = new A();
+    a.m();
+}

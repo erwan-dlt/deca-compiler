@@ -1,0 +1,12 @@
+// Description:
+//    Extension d'une classe par elle même 
+//
+// Resultats:
+//    Erreur : la classe s'étend elle même
+
+class A{
+    int a;
+}
+
+class A extends A{
+}

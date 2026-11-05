@@ -1,0 +1,14 @@
+// Description :
+// test de syntaxe pour literal
+//
+// Resultats :
+// ok
+
+{
+    int x = 42;
+    float y = 3.14;
+    boolean t = true;
+    boolean f = false;
+    println("Hello, Deca!");
+    return null;
+}

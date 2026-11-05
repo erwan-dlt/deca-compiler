@@ -1,0 +1,13 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (pas de type pour les paramètres de la méthode)
+//
+// Resultats:
+//    ligne 10 : Erreur, erreur d'opérateur
+
+class A{
+    int method(x){
+        return x;
+    }
+}

@@ -1,0 +1,16 @@
+// Description:
+//    Test incorrect de cast entre deux classes non liées
+//
+// Résultats:
+//    Erreur : B n'étend pas A donc problème de cast
+
+class A {
+}
+
+class B{
+}
+
+{
+    A a = new A();
+    B b = (B)(a);
+}

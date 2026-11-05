@@ -1,0 +1,11 @@
+// Description:
+//    Déclaration de classe avec extension
+//
+// Resultats:
+//
+
+class A{
+}
+
+class B extends A{
+}

@@ -1,0 +1,11 @@
+// Description :
+// test de syntaxe pour cast
+//
+// Resultats :
+// ok
+
+{
+    (int)(3.14);
+    (A)(a);
+    (int)(2.0+3.0);
+}

@@ -1,0 +1,9 @@
+// Description:
+//    Println sur une expression
+//
+// Resultats:
+//    2
+
+{
+    println(1);
+}

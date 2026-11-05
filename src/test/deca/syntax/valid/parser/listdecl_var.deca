@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour list_decl_var
+//
+// Resultats :
+// ok
+
+{
+    int a, b = 5, c;
+}

@@ -1,0 +1,10 @@
+// Description:
+//    Signature des opérateurs						
+//    -> declaration type void
+//
+// Resultats:
+//    Erreur : 
+
+{
+    void x;
+}

@@ -1,0 +1,14 @@
+// Description:
+//    Conversion d'un int en float lors d'une division
+//
+// Resultat :
+//    2.0
+
+
+
+{
+    int a = 1;
+    float b = 2.0;
+    float c = b/a;
+    println(c);
+}

@@ -1,0 +1,14 @@
+// Description:
+//    Débordements lors de l’évaluation des expressions
+//    Pas de débordement pour les opérations arithmétiques sur les entiers
+//
+// Resultat :
+//    -2147483648 (modulo 32 bits)
+
+
+{
+    int a = 2147483647;
+    int b = 1;
+    int c = a + b;
+    println(c);
+}

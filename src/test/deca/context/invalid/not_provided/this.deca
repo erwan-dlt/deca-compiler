@@ -1,0 +1,13 @@
+// Description:
+//    Utilisation de this pour un attribut qui n'existe pas pour la classe
+//
+// Resultats:
+//    Erreur : 
+
+class A{
+    int a;
+
+    void A(int a){
+        this.b = a;
+    }
+}

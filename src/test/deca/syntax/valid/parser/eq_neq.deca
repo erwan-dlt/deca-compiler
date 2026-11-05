@@ -1,0 +1,13 @@
+// Description :
+// test de syntaxe pour eq_neq_expr
+//
+// Resultats :
+// ok
+
+{
+    if (x == y) {
+        print("Equal");
+    } else if (x != y) {
+        print("Not Equal");
+    }
+}

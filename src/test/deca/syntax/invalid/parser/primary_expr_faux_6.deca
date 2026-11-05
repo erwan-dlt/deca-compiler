@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (mauvaise utilisation de `new` sans spécifier de classe)
+//
+// Résultats:
+//    ligne 6 : Erreur, `new` nécessite un identifiant de classe
+
+{
+    int x = new();
+}

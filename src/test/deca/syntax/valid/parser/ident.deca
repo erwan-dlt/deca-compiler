@@ -1,0 +1,12 @@
+// Description :
+// test de syntaxe pour ident
+//
+// Resultats :
+// ok
+
+{
+    int myVariable;
+    float z1;
+    float z2;
+    boolean uneNouvelleVariable10000;
+}

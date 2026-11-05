@@ -1,0 +1,14 @@
+// Description:
+//    While / If then else					
+//    -> test du while
+//
+// Resultats:
+//    ok 
+
+{
+    int x = 5;
+    while (x > 0) {
+        print(x);
+        x = x - 1;
+    }
+} 

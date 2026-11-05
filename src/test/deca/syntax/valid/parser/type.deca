@@ -1,0 +1,11 @@
+// Description :
+// test de syntaxe pour type
+//
+// Resultats :
+// ok
+
+{
+    int a;
+    float b;
+    boolean c;
+}

@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour sum_expr
+//
+// Resultats :
+// ok
+
+{
+    x = y + z - 10;
+}

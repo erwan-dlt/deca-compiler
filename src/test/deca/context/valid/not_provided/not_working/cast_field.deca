@@ -1,0 +1,19 @@
+// Description:
+//    Test valide de cast sur les attributs d'une classe
+//
+// Résultats:
+//    ok
+
+class A {
+    int a;
+}
+
+class B extends A {
+    float b;
+}
+
+{
+    A a = new A();
+    B b = new B();
+    b.b = (float)(a.a);
+}

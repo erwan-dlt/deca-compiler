@@ -1,0 +1,17 @@
+// Description:
+//    Appel d'une fonction sur une variable de type différent que ses paramètres
+//
+// Resultats:
+//    Erreur : ligne 15 - type des paramètres incorrect
+
+class A{
+    void m(int a, int b){
+        println(a,b);
+    }
+}
+
+{
+    A a;
+    a.m(1.0, true);
+}
+

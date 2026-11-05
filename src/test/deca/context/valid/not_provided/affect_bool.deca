@@ -1,0 +1,12 @@
+// Description:
+//    Affectation des attributs
+//    -> affectation booleen
+//
+// Resultats:
+//    x = false
+//    z = true
+
+{
+    boolean x = 1 > 3;
+    boolean z = true || false;
+}

@@ -1,0 +1,12 @@
+// Description:
+//    Signature des opérateurs
+//    -> opérateurs binaires avec des booléens
+//
+// Resultats:
+//    ok
+
+{
+    true && false;
+    true || false;
+    false || false;
+}

@@ -1,0 +1,12 @@
+// Description :
+// Deux classes de même nom
+//
+// Résultat :
+//      Erreur : les classes ont le même nom
+
+class A {
+}
+
+class A{
+}
+

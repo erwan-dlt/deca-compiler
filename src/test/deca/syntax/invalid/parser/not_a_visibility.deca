@@ -1,0 +1,12 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (visiblité qui n'existe pas)
+//
+// Resultats:
+//    ligne 10 : Erreur, nom de visibilité incorrect
+
+class A{
+    public int x;
+}
+

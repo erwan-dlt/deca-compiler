@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour new
+//
+// Resultats :
+// ok
+
+{
+    A a = new A();
+}

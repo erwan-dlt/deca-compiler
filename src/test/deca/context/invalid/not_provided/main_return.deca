@@ -1,0 +1,10 @@
+// Description :
+// Bloc main avec un return
+//
+// Résultat :
+//      Erreur : ligne 5 - le main ne doit pas retourner de valeur
+
+{
+    int a = 2;
+    return a;
+}

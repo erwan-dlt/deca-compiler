@@ -1,0 +1,65 @@
+// Description :
+// test pour la déclaration de classes avec extension
+//
+// Resultats :
+//   ok
+//   ok
+//   ok
+//   ok
+//   ok
+
+class A{
+    boolean a = true;
+
+    void setA(boolean a){
+        this.a = a;
+    }
+
+    boolean getA(){
+        return a;
+    }
+}
+
+class B extends A{
+    boolean b = false;
+}
+
+{
+    A a = new A();
+    B b = new B();
+    
+    if (a.getA()){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    a.setA(false);
+
+    if (!a.getA()){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (b.getA()){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    b.setA(false);
+
+    if (!b.getA()){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (b.b){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+}
+

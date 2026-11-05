@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe faux pour cast
+//
+// Resultats :
+//       Erreur : ligne 8 - il manque les parenthèses autour de l'expression à caster
+
+{
+    (int) 3.14;
+}

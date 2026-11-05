@@ -1,0 +1,14 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (erreur d'opérateur : ! au lieu de !=)
+//
+// Resultats:
+//    ligne 11 : Erreur, erreur d'opérateur 
+
+
+{
+    if (x ! y) {
+        print("Not equal");
+    }
+}

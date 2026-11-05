@@ -1,0 +1,13 @@
+// Description:
+//    Test incorrect de cast d'une classe par un type
+//
+// Résultats:
+//    Erreur : on ne peut pas caster une classe par un type
+
+class A {
+}
+
+{
+    A a = new A();
+    int b = (int)(a);
+}

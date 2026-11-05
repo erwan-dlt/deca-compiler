@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (readInt doit être appelé sans arguments)
+//
+// Resultats:
+//    ligne 10 : Erreur, argument dans readInt
+
+{
+    readInt(5);
+}

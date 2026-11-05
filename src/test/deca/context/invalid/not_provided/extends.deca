@@ -1,0 +1,9 @@
+// Description:
+//    Extension d'une classe non déclarée
+//
+// Resultats:
+//    Erreur : la classe n'est pas déclarée avant d'être étendue
+
+class A extends B{
+    int a = 1;
+}

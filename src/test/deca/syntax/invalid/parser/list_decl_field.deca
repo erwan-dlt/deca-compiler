@@ -1,0 +1,13 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (déclaration de classe avec attributs)
+//
+// Resultats:
+//    ligne 11 : Erreur, erreur dans la déclaration de y et z
+
+class A{
+    int x = 12;
+    float y, z = 2.0, 3.2;
+    boolean b = 2 > 3;
+}

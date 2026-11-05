@@ -1,0 +1,10 @@
+// Description :
+// test de syntaxe pour list_decl
+//
+// Resultats :
+// ok
+
+{
+    int x, y;
+    float z;
+}

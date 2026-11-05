@@ -1,0 +1,11 @@
+// Description:
+//    Signature des opérateurs						
+//    -> Opérateur de comparaison avec types incompatibles
+//
+// Resultats:
+//    Erreur : 
+
+{
+    int x = 2;
+    x == true;
+}

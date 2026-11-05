@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour null
+//
+// Resultats :
+// ok
+
+{
+    return null;
+}

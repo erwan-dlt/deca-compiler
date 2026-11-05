@@ -1,0 +1,20 @@
+// Description:
+//    Test branche conditionnelle
+//    -> if elsif else
+//
+// Resultats:
+//    x est positif
+
+{
+    float x = 1.0;
+    if (x == 0){
+        println("x = 0");
+    } 
+    else if (x > 0){
+        println("x est positif");
+    }
+    else{
+        println("x est négatif");
+    }
+}
+

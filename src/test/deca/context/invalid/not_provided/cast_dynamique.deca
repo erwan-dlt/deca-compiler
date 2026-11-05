@@ -1,0 +1,16 @@
+// Description:
+//    Test incorrect : cast échouant à cause du type dynamique
+//
+// Résultats:
+//    Erreur
+
+class A {
+}
+
+class B extends A {
+}
+
+{
+    A a = new A(); 
+    B b = (B)(a);  
+}

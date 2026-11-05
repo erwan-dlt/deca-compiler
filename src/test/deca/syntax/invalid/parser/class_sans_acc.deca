@@ -1,0 +1,12 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (classe avec accolade manquante)
+//
+// Resultats:
+//    ligne 11 : Erreur, accolade fermante manquante
+
+class A{
+    int x = 1;
+
+

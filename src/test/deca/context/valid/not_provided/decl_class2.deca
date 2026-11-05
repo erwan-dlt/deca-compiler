@@ -1,0 +1,14 @@
+// Description:
+//    Déclaration de plusieurs classes
+//
+// Resultats:
+//    ok
+
+class A{
+}
+
+class B{
+}
+
+class C{
+}

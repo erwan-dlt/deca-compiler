@@ -1,0 +1,7 @@
+// Description :
+// test de lexique : include 
+//
+// Resultats :
+// ok
+
+#include "ident.deca"

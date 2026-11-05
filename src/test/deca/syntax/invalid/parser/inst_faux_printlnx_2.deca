@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (parenthèse fermante ouvrante pour printlnx)
+//
+// Resultats:
+//    ligne 10 : Erreur, parenthèse ouvrante manquante
+
+{
+    println "Hello");
+}

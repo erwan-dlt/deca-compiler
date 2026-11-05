@@ -1,0 +1,10 @@
+// Description:
+//    Signature des opérateurs						
+//    -> Opérateur op ∈ {lt, gt, leq, geq} avec types incompatibles
+//
+// Resultats:
+//    Erreur : 
+
+{
+    true >= 1.3;
+}

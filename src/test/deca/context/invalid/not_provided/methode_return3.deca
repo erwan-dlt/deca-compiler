@@ -1,0 +1,11 @@
+// Description :
+// Méthode qui retourne le mauvais type (pas de return, retourne un float)
+//
+// Résultat :
+//      Erreur : ligne 9 - type de retour incorrect
+
+class A {
+    void method(float a) {
+        return a;
+    }
+}

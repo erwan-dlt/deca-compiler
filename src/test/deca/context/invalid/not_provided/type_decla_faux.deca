@@ -1,0 +1,10 @@
+// Description:
+//    Signature des opérateurs						
+//    -> type de déclaration faux
+//
+// Resultats:
+//    Erreur : 
+
+{
+    double x;
+}

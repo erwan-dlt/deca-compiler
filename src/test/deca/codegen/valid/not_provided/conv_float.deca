@@ -1,0 +1,13 @@
+// Description:
+//    Conversion d'un int en float
+//
+// Resultat :
+//    3.0
+
+
+
+{
+    int a = 1;
+    float b = 2.0;
+    println(a+b);
+}

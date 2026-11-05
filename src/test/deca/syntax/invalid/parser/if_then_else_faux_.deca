@@ -1,0 +1,13 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (pas d'instruction après le else)
+//
+// Resultats:
+//    ligne 12 : Erreur, pas de bloc d'instruction après le else
+
+{
+    int x = 1;
+    if (x < 2) { x = 0; }
+    else;
+}

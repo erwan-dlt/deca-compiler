@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe faux pour readint
+//
+// Resultats :
+//      Erreur : readInt ne prend pas d'argument
+
+{
+    x = readInt(2);
+}

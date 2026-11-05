@@ -1,0 +1,12 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (deux virgule qui se suivent dans la 
+//    déclaration d'une liste de variables)
+//
+// Resultats:
+//    ligne 10 : Erreur, deux virgule qui se suivent
+
+{
+    int x, , int y = 3; 
+}

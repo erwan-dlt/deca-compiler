@@ -1,0 +1,678 @@
+// Grenoble INP - Ensimag projet GL -*- mode: java -*-
+// Library for class Math of Deca, coded in Deca
+
+/*
+*Choices of implementation for the different functions are described 
+*in docs/doc_calcul_trigo.docx
+*/
+
+class Maths {
+    float PI=3.14159265358979323846f;
+    float HALF_PI=1.57079632679489661923f;
+    float QUARTER_PI=0.78539816339744830962f;
+    float DOUBLE_PI=6.28318530717958647692f;
+
+    int MAX_ITER = 1000; // Nombre d'iterations pour les developpements en serie de Taylor
+
+    // FONCTIONS APPELANT SERIES//
+
+    /**
+    * Calcul optimise du sinus pour un float base sur les series de Taylor
+    */
+    float sin(float f) {
+        float x = _reduceIter(f,DOUBLE_PI);  // Reduit a [-2PI, 2PI]
+        boolean isNegative = false; // Reduit a [0, 2pi] et stocke le signe du sinus dans isNegative
+        float result = _sinRemarquable(x); //si valeur remarquable
+
+        //controle que reducefloat a fonctionne
+        if (!_inInterval(x, -DOUBLE_PI,DOUBLE_PI)){
+            println("Erreur : x n'a pas ete ramene dans l'intervalle [-2PI, 2PI]");
+            return(0);
+        }
+        // On va ensuite utiliser la symetrie du sinus
+        if (x < 0.0) {
+            x = -x;
+            isNegative = true;
+        }
+
+        if (result!=2.0f){
+            if (!isNegative) {
+                return result;
+            }
+            else{
+                return -result;
+            }
+        }
+
+        if (x > PI) {  //Reduit a [0, PI]
+            x = DOUBLE_PI - x;
+            isNegative = !isNegative;
+        }
+        if (x > HALF_PI) {  //Reduit a [0, PI/2]
+            x = PI - x;
+        }
+        if (x> QUARTER_PI){ //On utilise le fait que sin(x)=cos(PI/2-x) dans cet intervalle
+            if(!isNegative){
+                return(_taylorCos(HALF_PI-x));
+            }
+            else{ return -_taylorCos(HALF_PI-x); }
+        }
+        else{
+            result = _taylorSin(x);
+            if (isNegative) { // On resigne le resultat
+                result = -result;
+            }
+            return result;
+        }
+    }
+
+    /**
+    * Calcul optimise du cosinus pour un float base sur les series de Taylor
+    */
+    float cos(float f) {
+        float x = _reduceIter(f,DOUBLE_PI);
+        float result = _cosRemarquable(x); // si valeur remarquable
+        boolean isNegative = false;
+
+        if (!_inInterval(x, -DOUBLE_PI, DOUBLE_PI)) {
+            println("Erreur : x n'a pas ete ramene dans l'intervalle [-2PI, 2PI]");
+            return 0;
+        }
+
+        if (result!=2.0f){
+            return result;
+        }
+
+        // on explooite la symetrie du cosinus
+        if (x < 0.0) { // on ramène x dans [0, 2pi]
+            x = -x;
+        }
+        if (x > PI) {  // on ramène x dans [0, pi]
+            x = DOUBLE_PI - x;
+        }
+
+        if (x > HALF_PI) {  // on ramène dans [0, pi/2] (intervention du signe car cos(x) = -cos(pi - x))
+            x = PI - x;
+            isNegative = true;
+        }
+
+        if (x > QUARTER_PI) { // ici on utilise le fait que cos(x) = sin(pi/2 - x)
+            if(!isNegative){
+                return (_taylorSin(HALF_PI - x));
+            }
+            else{ return -(_taylorSin(HALF_PI - x)); }
+        }
+        else { // on est dans [0, pi/4]
+            result = _taylorCos(x);
+            if (isNegative) {
+                result = -result;
+            }
+            return result;
+        }
+    }
+
+    /**
+    * Calcul optimise de la tangente pour un float (base sur la division de sin(x) par cos(x))
+    */
+    float tan(float f) {
+        float x = _reduceIter(f, PI); //on ramène dans [-PI, PI] car periode de tan = PI
+
+        float result = _tanRemarquable(x);  //valeurs remarquables et gère le cas +-PI/2
+        if (result != 2.0f) {
+            return result;
+        } else {
+            return(sin(x)/cos(x));  //tan(x)=sin(x)/cos(x)
+        }
+    }
+
+    /**
+    * Utilisation des symetries et appel de talyor de l'arcsin
+    */
+    float asin(float f) {
+        float result = _asinRemarquable(f);  //valeurs remarquables
+        boolean isNegative = f < 0.0;
+
+        if (!_inInterval(f, -1.0, 1.0)) {
+            println("Erreur : f n'est pas dans l'intervalle [-1, 1] pour le calcul de asin");
+        }
+        if (result != 2.0f) {
+            return result;
+        }
+        if (isNegative) {
+            f=-f;
+        }
+        if (f>QUARTER_PI){  //on utilise le fait que "asin(x) = PI/2 - 2*asin(sqrt((1-x)/2))" pour ne pas être trop proche de 1
+            result = HALF_PI - 2.0f*_asinTaylor(_sqrt((1.0f-f)/2.0f));
+        }
+        else{
+            result = _asinTaylor(f);
+        }
+        if (isNegative) {
+            result = -result;
+        }
+        return (result);
+    }
+
+    /**
+    * Utilisation des symetries et appel de talyor de l'arccos
+    */
+    float acos(float f) {
+        float result = _acosRemarquable(f);  //valeurs remarquables
+
+        if (!_inInterval(f, -1.0, 1.0)){
+            println("Erreur : x n'est pas dans l'intervalle [-1, 1] pour le calcul de acos");
+        }
+        if (result != 2.0f) {
+            return result;
+        }
+        if(f>0.0){
+            return PI-acos(-f); //on utilise le fait que acos(x) + asin(x) = PI/2 sur [-1,1]
+        } else {
+            return HALF_PI - asin(f); //on utilise le fait que acos(x) + asin(x) = PI/2 sur [-1,1]
+        }
+    }
+
+    float atan(float f) {
+        float result = _atanRemarquable(f);  // valeurs remarquables
+        boolean isNegative = f < 0.0;
+
+        if (result != 2.0f) {
+            return result;
+        }
+        if (isNegative) {  // Traite les cas négatifs
+            f = -f;
+        }
+
+        if (f > 1) {  // Utilisation de la relation complémentaire pour x > 1
+            result = HALF_PI - _atanTaylor(1 / f);
+        } else {
+            result = _atanTaylor(f);
+        }
+
+        if (isNegative) {
+            result = -result;
+        }
+        return result;
+    }
+
+
+    /**
+    * Methode permettant de reduire un entier dans l'intervalle [-bound, 2bound] avec un appel au modulo
+    */
+    float _reduceClassic(int x, float bound){
+        if(_inInterval(x, -bound, bound)){
+            return x;
+        }
+        return(x%bound);
+    }
+
+    /**
+    * Methode permettant de ramener un float dans l'intervalle [-2PI, 2PI]
+    */
+    float _reduceIter(float x,float bound){
+        boolean is_negative = false;
+
+        if(_inInterval(x, -bound, bound)){
+            return x;
+        }
+        if(x<0.0) {
+            x = -x;
+            is_negative = true;
+        }
+        while(x>1000*bound){
+            x = x - 1000*bound;
+        }
+        while(x>100*bound){
+            x = x - 100*bound;
+        }
+        while(x>10*bound){
+            x = x - 10*bound;
+        }
+        while(x>bound){
+            x = x - bound;
+        }
+        if(is_negative){
+            x = -x;
+        }
+        return (x);
+    }
+
+    //  FONCTIONS MATHEMATIQUES STANDARD AIDANT POUR LES ALGORITHMES  //
+
+    /*
+    * Methode pour calculer x^n rapidement en utilisant l'exponentiation rapide.
+    * @param base La base x (de type double).
+    * @param exponent L'exposant n (de type entier).
+    * @return Le resultat de x^n (de type double).
+    */
+    float _pow(float base, int exponent) {
+        float result = 1.0;
+        float currentBase = base;
+        int currentExponent = (int) (_abs(exponent)); 
+
+        if (exponent == 0) {
+            return 1.0f; // Toute base elevee a la puissance 0 vaut 1
+        }
+        if (base == 0) {
+            return 0.0f;     // 0 eleve a n'importe quelle puissance est 0
+        }
+
+        while (currentExponent > 0) {
+            if (currentExponent == 1) {
+                result = result * currentBase;
+            }
+            currentBase = currentBase * currentBase;
+            currentExponent = currentExponent / 2;
+        }
+        if (exponent < 0) {
+            return 1.0 / result;
+        } else {
+            return result;
+        }
+    }
+
+    /* Implementation de la fonction _abs car pas dans la bibliothèque standard
+    */
+    float _abs(float v) {
+        if (v < 0.0) {
+            return -v;
+        }
+        return v;
+    }
+
+    /* Fonction permettant de contrôler l'appartenance a un intervalle
+    */
+    boolean _inInterval(float x, float a, float b) {
+        return x >= a && x <= b;
+    }
+
+    /* Fonction permettant de caclculer la racine carree d'un float avec la methode de babylone
+    */
+    float _sqrt(float f){
+        float x = f;
+        float y = 1.0;
+        float e = 1.0e-7;
+
+        if (f < 0.0) {
+            println("Erreur : racine carree d'un nombre negatif");
+            return 0.0;
+        }
+        while (_abs(x - y) > e) {
+            x = (x + y) / 2.0;
+            y = f / x;
+        }
+        return x;
+    }
+
+
+    // ALGORITHMES DE CALCUL TRIGO  //
+
+    /*
+    *  Implementation de la fonction sinus par la methode de Taylor
+    *  @param x : float (angle en radian : valeur absolue inferieure a 0.1)
+    *  @return le sinus de x
+    */
+    float _taylorSin(float x) {
+        // Initialisation
+        float x2 = x * x; // x^2
+        float term = x;   // Premier terme
+        float sum = x;    // Initialisation de la somme
+        int n = 0;        // Compteur d'iterations
+        float ratio;
+        float newSum;
+
+        if (!_inInterval(x,0,QUARTER_PI)){
+            println("Erreur : x n'a pas ete reduit dans [0,PI/4] pour le developpement de sin");
+            return(0);
+        }
+
+        while (true) {
+            ratio = -1.0f / ((2.0f*n+2)*(2.0f*n+3));
+            term = term * x2 * ratio;
+
+            newSum = sum + term;
+
+            if (newSum == sum) { // La somme ne change plus (term trop petit)
+                return newSum;
+            }
+            if (n >= MAX_ITER) { // Atteint le nombre maximal d'iterations
+                return newSum;
+            }
+            sum = newSum; // Mise a jour de la somme
+            n = n + 1;
+        }
+        return sum;
+    }
+
+    /*
+    *  Implementation de la fonction cosinus par la methode de Taylor
+    *  @param x : float (angle en radian : valeur absolue inferieure a 0.1)
+    *  @return le cosinus de x
+    */
+    float _taylorCos(float x) {
+        // Initialisation
+        float x2 = x * x;    // x^2
+        float term = 1.0f;   // Premier terme
+        float sum = 1.0f;    // Initialisation de la somme
+        int n = 0;           // Compteur d'iterations
+        float ratio;
+        float newSum;
+
+        if (!_inInterval(x,0,QUARTER_PI)){
+            println("Erreur : x n'a pas ete reduit dans [0,PI/4] pour le developpement de cos");
+            return(0);
+        }
+
+        while (true) {
+            ratio = -1.0f / ((2.0f*n+1)*(2.0f*n+2));
+            term = term * x2 * ratio;
+
+            newSum = sum + term;
+
+            if (newSum == sum) { // La somme ne change plus (term trop petitt)
+                return newSum;
+            }
+            if (n >= MAX_ITER) { // Atteint le nombre maximal d'iterations
+                return newSum;
+            }
+            sum = newSum; // Mise a jour de la somme
+            n = n + 1;
+        }
+        return sum;
+    }
+
+    /*
+    *  Implementation de la fonction asin par la methode de Taylor
+    *  @param x : float dans l'intervalle [0;PI/4]
+    *  @return l'angle y tel que sin(y) = x
+    */
+    float _asinTaylor(float x){
+
+        // Initialisation
+        float x2 = x * x;    // x^2
+        float term = x;      // Premier terme
+        float sum = x;       // Initialisation de la somme
+        int n = 0;           // Compteur d'iterations
+        float ratio;
+        float newSum;
+
+        while (true) {
+            ratio = (float)((2*n+1)*(2*n+1)*(2*n+2))/(4*(n+1)*(n+1)*(2*n+3));
+            term = term * x2 * ratio;
+
+            newSum = sum + term;
+
+            if (newSum == sum) { // La somme ne change plus (term trop petitt)
+                return newSum;
+            }
+            if (n >= MAX_ITER) { // Atteint le nombre maximal d'iterations
+                return newSum;
+            }
+            sum = newSum; // Mise a jour de la somme
+            n = n + 1;
+        }
+        return sum;
+    }
+
+    /*
+    *  Implementation de la fonction asin par la methode de Taylor
+    *  @param x : float dans l'intervalle [0;PI/4]
+    *  @return l'angle y tel que sin(y) = x
+    */
+    float _atanTaylor(float x){
+        // Initialisation
+        float x2 = x * x;    // x^2
+        float term = x;      // Premier terme
+        float sum = x;       // Initialisation de la somme
+        int n = 0;           // Compteur d'iterations
+        float ratio;
+        float newSum;
+
+
+        if (!_inInterval(x,0,1)){
+            println("Erreur : x n'a pas ete reduit dans [0,1] pour le developpement en serie de atan");
+            return(0);
+        }
+
+        while (true) {
+            ratio = (float)((-1.0f)*(2.0f*n+1))/(2.0f*n+3);
+            term = term * x2 * ratio;
+
+            newSum = sum + term;
+
+            if (newSum == sum) { // La somme ne change plus (term trop petitt)
+                return newSum;
+            }
+            if (n >= MAX_ITER) { // Atteint le nombre maximal d'iterations
+                return newSum;
+            }
+            sum = newSum; // Mise a jour de la somme
+            n = n + 1;
+        }
+        return sum;
+    }
+
+    // FONCTIONS IDENTIFIANTS LES VALEURS REMARQUABLES //
+
+    /**
+     * Fonction identifiant si x (en radians) est un angle remarquable
+     * et, si oui, renvoie la valeur exacte de sin(x).
+     */
+    float _sinRemarquable(float x) {
+        float EPS = 1.0e-7; //ecart de tolerance
+
+        if (_abs(x - 0.0) < EPS) {
+            return 0.0; // sin(0) = 0
+        }
+        if (_abs(x - HALF_PI) < EPS) {
+            return 1.0; // sin(pi/2) = 1
+        }
+        if (_abs(x - PI) < EPS) {
+            return 0.0; // sin(pi) = 0
+        }
+        if (_abs(x - (3.0 * HALF_PI)) < EPS) {
+            return -1.0; // sin(3pi/2) = -1
+        }
+        if (_abs(x - (2.0 * PI)) < EPS) {
+            return 0.0; // sin(2pi) = 0
+        }
+        if (_abs(x - (PI / 6.0)) < EPS) {
+            return 0.5; // sin(pi/6) = 0.5
+        }
+        if (_abs(x - (PI / 4.0)) < EPS) {
+            return 0.707106781; // sin(pi/4) = 0.7071
+        }
+        if (_abs(x - (PI / 3.0)) < EPS) {
+            return 0.8660254038; // sin(pi/3) = 0.8660
+        }
+
+        // Pas trouve : renvoie une valeur ne correspondant a auncun angle remarquable
+        return 2.0;
+    }
+
+    /**
+    * Fonction identifiant si x (en radians) est un angle remarquable
+    * et, si oui, renvoie la valeur exacte de cos(x).
+    */
+    float _cosRemarquable(float x) {
+        float EPS = 1.0e-7; //ecart de tolerance
+
+        if (_abs(x - 0.0) < EPS) {
+            return 1.0; // cos(0) = 1
+        }
+        if (_abs(x - HALF_PI) < EPS) {
+            return 0.0; // cos(pi/2) = 0
+        }
+        if (_abs(x - PI) < EPS) {
+            return -1.0; // cos(pi) = -1
+        }
+        if (_abs(x - (3.0 * HALF_PI)) < EPS) {
+            return 0.0; // cos(3pi/2) = 0
+        }
+        if (_abs(x - (2.0 * PI)) < EPS) {
+            return 1.0; // cos(2pi) = 1
+        }
+        if (_abs(x - (PI / 3.0)) < EPS) {
+            return 0.5; // cos(pi/3) = 0.5
+        }
+        if (_abs(x - (PI / 4.0)) < EPS) {
+            return 0.707106781; // cos(pi/4) = sqrt(2)/2
+        }
+        if (_abs(x - (PI / 6.0)) < EPS) {
+            return 0.8660254038; // cos(pi/6) = sqrt(3)/2
+        }
+
+        // Pas trouve : renvoie une valeur ne correspondant a auncun angle remarquable
+        return 2.0;
+    }
+
+    /**
+     * Fonction identifiant si x (en radians) est un angle remarquable pour la tangente
+     * et, si oui, renvoie la valeur precise de tan(x).
+     */
+    float _tanRemarquable(float x) {
+        float EPS = 1.0e-7; // tolerance de comparaison
+
+        if (_abs(x - 0.0) < EPS) {
+            return 0.0; // tan(0) = 0
+        }
+        if (_abs(x - (PI / 4.0)) < EPS) {
+            return 1.0; // tan(pi/4) = 1
+        }
+        if (_abs(x - (PI / 6.0)) < EPS) {
+            return 0.5773502692; // tan(pi/6) = 1/sqrt(3)
+        }
+        if (_abs(x - (PI / 3.0)) < EPS) {
+            return 1.7320508076; // tan(pi/3) = sqrt(3)
+        }
+        if (_abs(x - PI) < EPS) {
+            return 0.0; // tan(pi) = 0
+        }
+        if (_abs(x - HALF_PI) < EPS) {
+            println("Erreur tangente non définie en PI/2");
+        }
+        if (_abs(x + HALF_PI) < EPS) {
+            println("Erreur tangente non définie en -PI/2");
+        }
+
+        // Pas trouve : renvoie une valeur ne correspondant a auncun angle remarquable
+        return 2.0;
+    }
+
+    /**
+     * Fonction identifiant si f est une valeur remarquable de asin
+     * et, si oui, renvoie la valeur correspondante (en radians)
+     */
+    float _asinRemarquable(float f) {
+        float EPS = 1.0e-7; // tolerance de comparaison
+
+        if (_abs(f - 0.0) < EPS) {
+            return 0.0; // asin(0) = 0
+        }
+        if (_abs(f - 0.5) < EPS) {
+            return PI / 6.0; // asin(1/2) = pi/6
+        }
+        if (_abs(f - 0.7071067812) < EPS) {
+            return PI / 4.0; // asin(sqrt(2)/2) = pi/4
+        }
+        if (_abs(f - 0.8660254038) < EPS) {
+            return PI / 3.0; // asin(sqrt(3)/2) = pi/3
+        }
+        if (_abs(f - 1.0) < EPS) {
+            return HALF_PI; // asin(1) = pi/2
+        }
+        if (_abs(f + 0.5) < EPS) {
+            return -PI / 6.0; // asin(-1/2) = -pi/6
+        }
+        if (_abs(f + 0.7071067812) < EPS) {
+            return -PI / 4.0; // asin(-sqrt(2)/2) = -pi/4
+        }
+        if (_abs(f + 0.8660254038) < EPS) {
+            return -PI / 3.0; // asin(-sqrt(3)/2) = -pi/3
+        }
+        if (_abs(f - (-1.0)) < EPS) {
+            return -HALF_PI; // asin(-1) = -pi/2
+        }
+
+        // Pas trouve : renvoie une valeur ne correspondant a auncun angle remarquable
+        return 2.0;
+    }
+
+    /**
+     * Fonction identifiant si f est une valeur remarquable de acos
+     * et, si oui, renvoie la valeur correspondante (en radians)
+     */
+    float _acosRemarquable(float f) {
+        float EPS = 1.0e-7; // tolerance de comparaison
+
+        if (_abs(f - 1.0) < EPS) {
+            return 0.0; // acos(1) = 0
+        }
+        if (_abs(f - 0.8660254038) < EPS) {
+            return PI / 6.0; // acos(sqrt(3)/2) = pi/6
+        }
+        if (_abs(f - 0.7071067812) < EPS) {
+            return PI / 4.0; // acos(sqrt(2)/2) = pi/4
+        }
+        if (_abs(f - 0.5) < EPS) {
+            return PI / 3.0; // acos(1/2) = pi/3
+        }
+        if (_abs(f - 0.0) < EPS) {
+            return HALF_PI; // acos(0) = pi/2
+        }
+        if (_abs(f + 0.5) < EPS) {
+            return 2.0 * PI / 3.0; // acos(-1/2) = 2pi/3
+        }
+        if (_abs(f + 0.7071067812) < EPS) {
+            return 3.0 * PI / 4.0; // acos(-sqrt(2)/2) = 3pi/4
+        }
+        if (_abs(f + 0.8660254038) < EPS) {
+            return 5.0 * PI / 6.0; // acos(-sqrt(3)/2) = 5pi/6
+        }
+        if (_abs(f - (-1.0)) < EPS) {
+            return PI; // acos(-1) = pi
+        }
+
+        // Pas trouve : renvoie une valeur ne correspondant a aucun angle remarquable
+        return 2.0;
+    }
+
+    /**
+     * Fonction identifiant si f est une valeur remarquable de atan
+     * et, si oui, renvoie la valeur correspondante (en radians)
+     */
+    float _atanRemarquable(float f) {
+        float EPS = 1.0e-7; // Tolerance de comparaison
+
+        if (_abs(f - 0.0) < EPS) {
+            return 0.0; // atan(0) = 0
+        }
+        if (_abs(f - 1.0) < EPS) {
+            return PI / 4.0; // atan(1) = pi/4
+        }
+        if (_abs(f - 0.5773502692) < EPS) {
+            return PI / 6.0; // atan(1/sqrt(3)) = pi/6
+        }
+        if (_abs(f - 1.7320508076) < EPS) {
+            return PI / 3.0; // atan(sqrt(3)) = pi/3
+        }
+        if (_abs(f + 1.0) < EPS) {
+            return -PI / 4.0; // atan(-1) = -pi/4
+        }
+        if (_abs(f + 0.5773502692) < EPS) {
+            return -PI / 6.0; // atan(-1/sqrt(3)) = -pi/6
+        }
+        if (_abs(f + 1.7320508076) < EPS) {
+            return -PI / 3.0; // atan(-sqrt(3)) = -pi/3
+        }
+
+        // Pas trouve : renvoie une valeur ne correspondant a aucun angle remarquable
+        return 2.0;
+    }
+    /*Fonction utile pour calculer l'ULP d'un float
+    */
+    float ulp(float x) {
+        return 0.0;
+    }
+}
+// End of Deca Math library

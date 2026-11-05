@@ -1,0 +1,12 @@
+// Description:
+//    Initialisation des variables et champs		
+//    Accès à une variable non initialisée
+//
+// Resultats:
+//    Erreur : 
+
+{
+   int x;
+   print("x = ", x);
+}
+

@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour printx
+//
+// Resultats :
+// ok
+
+{
+    printx(0.1);
+}

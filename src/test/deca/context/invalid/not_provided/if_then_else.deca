@@ -1,0 +1,16 @@
+// Description:
+//    While / If then else					
+//    -> test du if avec une condition non booléenne
+//
+// Resultats:
+//    Erreur :
+
+{
+    int x = 5;
+    if ("hello"){
+        print("x = 5");
+    }
+    else{
+        print("x != 5");
+    }
+} 

@@ -1,0 +1,11 @@
+// Description :
+// test de syntaxe pour visibility
+//
+// Resultats :
+// ok
+
+class A{
+    protected int x;
+    protected float y;
+    protected boolean z;
+}

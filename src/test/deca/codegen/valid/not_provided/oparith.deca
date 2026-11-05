@@ -1,0 +1,27 @@
+// Description:
+//    Test des opérations arithmétiques
+//
+// Resultats:
+//    3.41667e+00
+//    8
+
+{
+    int a = 5;
+    int b = 3;
+    int c;
+    float x = 2.5;
+    float y = 1.5;
+    float z;
+    boolean result;
+
+    z = x * y + x / y - 2.0;
+    c = a + b * (a - b) / 2;
+    result = c < 10 && z < 5.0;
+
+    if (result) {
+        println(z);
+        println(c);
+    } else {
+        println("Erreur");
+    }
+}

@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe faux pour instanceof
+//
+// Resultats :
+//       Erreur : ligne 8 - mismatched input '3' expecting IDENT
+
+{
+    int instanceof 3;
+}

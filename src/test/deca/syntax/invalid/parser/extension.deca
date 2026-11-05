@@ -1,0 +1,13 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (on étend une classe sans donner le nom de la classe étendue)
+//
+// Resultats:
+//    ligne 10 : Erreur, manque le nom de la classe étendue
+
+class A{
+}
+
+class B extends {
+}

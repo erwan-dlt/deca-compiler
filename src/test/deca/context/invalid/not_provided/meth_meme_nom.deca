@@ -1,0 +1,18 @@
+// Description :
+// Deux méthodes de même nom
+//
+// Résultat :
+//      Erreur : les méthodes ont le même nom
+
+class A {
+    int a;
+
+    A getA() {
+        return this;
+    }
+
+    A getA(int b) {
+        return this.a + b;
+    }
+}
+

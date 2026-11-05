@@ -1,0 +1,21 @@
+// Description :
+// Valeur retournée par la fonction affectée à un type incorrect
+//
+// Résultat :
+//      Erreur : ligne 13 - le type de la variable de réception est incorrect
+
+class A {
+    boolean f(float a) {
+        if(a > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+{
+    float x = 1.2; 
+    x = (new A()).f(5.2); 
+}

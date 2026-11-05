@@ -1,0 +1,13 @@
+// Description:
+//    Déclaration de classe suivie d'un main
+//
+// Resultats:
+//    ok
+
+class A{
+    int a;
+}
+
+{
+    println("ok");
+}

@@ -1,0 +1,10 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (erreur dans la déclaration de la classe : elle n'a pas de corps)
+//
+// Resultats:
+//    ligne 9 : Erreur, la classe n'a pas de corps
+
+class A;
+

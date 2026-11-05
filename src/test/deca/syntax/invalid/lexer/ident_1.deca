@@ -1,0 +1,7 @@
+// Description:
+//    tests de programme incorrect lexicalement 
+//
+// Resultats:
+//    ligne 7 : Erreur, un identifiant ne peut pas contenir de caractères non valides
+
+fichier#1

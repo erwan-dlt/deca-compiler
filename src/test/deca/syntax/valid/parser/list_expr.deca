@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour liste_expr
+//
+// Resultats :
+// ok
+
+{
+    print(x, y, z);
+}

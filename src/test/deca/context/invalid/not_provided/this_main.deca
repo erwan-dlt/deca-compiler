@@ -1,0 +1,13 @@
+// Description:
+//    Utilisation de this dans un main
+//
+// Resultats:
+//    Erreur : 
+
+class A{
+    int a;
+}
+
+{
+    this.a = 1;
+}

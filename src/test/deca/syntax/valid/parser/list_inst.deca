@@ -1,0 +1,10 @@
+// Description :
+// test de syntaxe pour list_inst
+//
+// Resultats :
+// ok
+
+{
+    print("This is a test.");
+    println(x + y);
+}

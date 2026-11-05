@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour modulo
+//
+// Resultats :
+// ok
+
+{
+    int x = 10 % 5;
+}

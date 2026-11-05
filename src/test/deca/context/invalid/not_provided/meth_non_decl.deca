@@ -1,0 +1,18 @@
+// Description :
+// Utilisation d'une méthode qui n'existe pas
+//
+// Résultat :
+//      Erreur : ligne 17 - la méthode n'existe pas 
+
+class A {
+    int a;
+
+    A getA() {
+        return this;
+    }
+}
+
+{
+    A a = new A();
+    a.setA(2);
+}

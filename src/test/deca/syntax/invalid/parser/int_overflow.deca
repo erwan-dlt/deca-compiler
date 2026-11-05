@@ -1,0 +1,7 @@
+// Description :
+// test de lexique faux pour un entier non codable sur 32 bits
+//
+// Resultats :
+//      Erreur : entier non codable sur 32 bits
+
+2147483648

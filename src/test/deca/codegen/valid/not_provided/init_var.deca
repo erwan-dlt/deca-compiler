@@ -1,0 +1,13 @@
+// Description:
+//    Initialisation explicite d'une variable 
+//    avant son utilisation
+//
+// Resultats:
+//    y = 0
+
+{
+    int x = 5;
+    int y = 10 % x;
+    print("y = ", y);
+}
+

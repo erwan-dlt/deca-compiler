@@ -1,0 +1,17 @@
+// Description:
+//    Définition d'une classe avec un attribut protected 
+//    et modification de cet attribut dans une autre classe
+//
+// Resultats:
+//    Erreur : ligne 15 - attribut protected non accessible
+
+class A{
+    protected int x;
+}
+
+class B{
+    void f(){
+        A a = new A();
+        a.x = 1;
+    }
+}

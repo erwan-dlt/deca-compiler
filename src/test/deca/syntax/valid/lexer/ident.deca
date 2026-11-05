@@ -1,0 +1,7 @@
+// Description :
+// test de lexique : identificateurs - ident 
+//
+// Resultats :
+// ok
+
+a _a $a abc123 a_b_c A1

@@ -1,0 +1,17 @@
+// Description :
+// Déclaration des classes après le bloc main
+//
+// Résultat :
+//      Erreur : la classe n'est pas déclarée avant d'être utilisée 
+
+{
+    A a = new A();
+}
+
+class A {
+    int a;
+
+    A getA() {
+        return this;
+    }
+}

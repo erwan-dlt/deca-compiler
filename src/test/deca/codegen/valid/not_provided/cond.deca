@@ -1,0 +1,44 @@
+// Description:
+//    Tests des conditions pour while
+//
+// Resultats:
+// 
+
+{
+    int a = 0;
+    int b = 5;
+    int c = 10;
+    int d = 10;
+    int e = 0;
+
+    println("Boucle while 1");
+    while (a < b) {
+        a = a + 1;
+        println(a);
+    }
+
+    println("Boucle while 2");
+    while (b >= e){
+        b = b - 1;
+        println(b);
+    }
+
+    println("Boucle while 3");
+    while (c != 5){
+        c = c - 1;
+        println(c);
+    }
+
+    if (!(d==10)){
+        println("Erreur");
+    }
+    else{
+        println("ok");
+    }
+
+    println("Boucle while 4");
+    while (!(d==5)){
+        d = d - 1;
+        println(d);
+    }
+}

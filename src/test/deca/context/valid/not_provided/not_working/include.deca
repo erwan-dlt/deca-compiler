@@ -1,0 +1,12 @@
+// Description:
+//    Test de include
+//
+// Resultats:
+//    ok
+
+#include "classeA.deca"
+
+{
+    A a = new A();
+    a.setA(1);
+}

@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe faux pour readFloat
+//
+// Resultats :
+//      Erreur : readFloat ne prend pas d'argument
+
+{
+    x = readFloat("hello");
+}

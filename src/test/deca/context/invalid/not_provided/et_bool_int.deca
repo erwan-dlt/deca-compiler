@@ -1,0 +1,10 @@
+// Description:
+//    Signature des opérateurs						
+//    -> Opérateur booléen avec autre chose que des bool						
+//
+// Resultats:
+//    Erreur : 
+
+{
+    true && "hello";
+}

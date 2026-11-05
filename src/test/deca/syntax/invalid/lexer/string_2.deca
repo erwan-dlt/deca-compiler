@@ -1,0 +1,7 @@
+// Description:
+//    tests de programme incorrect lexicalement 
+//
+// Resultats:
+//    ligne 7 : Erreur, \n n'est pas un caractère valide dans un string
+
+"Hello World \n"

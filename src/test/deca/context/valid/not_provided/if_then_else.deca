@@ -1,0 +1,19 @@
+// Description:
+//    While / If then else					
+//    -> test du if then else
+//
+// Resultats:
+//    ok 
+
+{
+    int x = 5;
+    if (x == 0){
+        print("x = 0");
+    }
+    else if (x % 2 == 0){
+        print("x est pair");
+    }
+    else{
+        print("x est impair");
+    }
+}

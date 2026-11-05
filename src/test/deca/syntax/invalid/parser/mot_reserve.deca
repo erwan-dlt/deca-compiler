@@ -1,0 +1,13 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (this est un mot reservé donc on ne 
+//    peut pas l'utiliser comme nom de variable)
+//
+// Resultats:
+//    ligne 11 : Erreur, mot réservé
+
+
+{
+    int this = 2;
+}

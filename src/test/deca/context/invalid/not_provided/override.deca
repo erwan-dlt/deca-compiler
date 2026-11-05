@@ -1,0 +1,16 @@
+// Description:
+//    Test incorrect : on étend une classe et on override une de ses méthodes mais 
+//    on ne redéfinit pas la méthode de la bonne façon dans la classe fille (pas le bon nombre de paramètres)
+//
+// Résultats:
+//    Erreur : 
+
+class A {
+    void m(int a){
+    }
+}
+
+class B{
+    void m(){
+    }
+}

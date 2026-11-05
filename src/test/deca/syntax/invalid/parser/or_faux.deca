@@ -1,0 +1,13 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (erreur d'opérateur : | au lieu de ||)
+//
+// Resultats:
+//    ligne 10 : Erreur, erreur d'opérateur
+
+{
+    if (x > 10 | y < 5) {
+        print("Condition met");
+    }
+}

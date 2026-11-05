@@ -1,0 +1,10 @@
+// Description:
+//    Signature des opérateurs						
+//    -> Opérateur unaire avec type incompatible
+//
+// Resultats:
+//    Erreur : 
+
+{
+    !2;
+}

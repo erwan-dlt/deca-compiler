@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour readint
+//
+// Resultats :
+//      ok
+
+{
+    x = readInt();
+}

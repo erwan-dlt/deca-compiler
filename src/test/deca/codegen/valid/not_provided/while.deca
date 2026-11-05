@@ -1,0 +1,13 @@
+// Description:
+//    Test while
+//
+// Resultats:
+//    10
+
+{
+    int a = 0;
+    while (a < 10){
+        a = a + 1;
+    }
+    println(a);
+}

@@ -1,0 +1,11 @@
+// Description :
+// Méthode sans type de retour
+//
+// Résultat :
+//      Erreur : ligne 8 - pas de type de retour dans la déclaration de la méthode
+
+class A {
+    method(float a) {
+        print(a);
+    }
+}

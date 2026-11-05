@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (nombre flottant avec un point supplémentaire)
+//
+// Résultats:
+//    ligne 10 : Erreur, nombre flottant mal formé
+
+{
+    float x = 10.12.11;
+}

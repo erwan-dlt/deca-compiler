@@ -1,0 +1,11 @@
+// Description :
+// test de syntaxe pour declaration de variable (decl_var)
+//
+// Resultats :
+// ok
+
+{
+    int x = 42;
+    float y;
+    boolean c;
+}

@@ -1,0 +1,12 @@
+// Description :
+// test de syntaxe pour select_expr
+//
+// Resultats :
+// ok
+
+{
+    obj.field;
+    obj.method(arg1, arg2);
+    obj.method();
+    a.b.c;
+}

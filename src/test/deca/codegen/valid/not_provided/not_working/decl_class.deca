@@ -1,0 +1,33 @@
+// Description :
+// test pour la déclaration de classes avec champ
+//
+// Resultats :
+//  ok
+//  ok
+
+class A{
+    boolean a = true;
+}
+
+class B{
+    boolean b = false;
+}
+
+{
+    A a = new A();
+    B b = new B();
+
+    if (a.a){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    if (!b.b){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+}
+

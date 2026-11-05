@@ -1,0 +1,10 @@
+// Description :
+// test d'une méthode avec du code en assembleur fausse (pas de string)
+//
+// Resultats :
+//      ligne 9 : Erreur, le code assembleur doit être une chaine de caractères
+
+class TestAsm {
+    void fonctionAsm()
+        asm(LOAD 1 R0);
+}

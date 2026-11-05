@@ -1,0 +1,8 @@
+// Description :
+// test de lexique : littéraux flottants
+//
+// Resultats :
+// ok
+
+0.0 123.456 1.23E4 9.1E+2 3.45e10 5.67e-8 1.2F 2.3f 3.4e2f 1f
+0x0.0 0X123.456 0xABC 0x1.2P3 0X3.4p-5 0x1.2P3F 0X1.2p-3f

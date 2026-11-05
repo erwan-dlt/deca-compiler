@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (un entier n'est pas une lvalue)
+//
+// Resultats:
+//    ligne 10 : Erreur, 5 n'est pas une lvalue
+
+{
+    5 = x;
+}

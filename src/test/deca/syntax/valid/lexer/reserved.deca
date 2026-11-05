@@ -1,0 +1,10 @@
+// Description :
+// test de lexique : mots réservés
+//
+// Resultats :
+// ok
+
+asm class extends else false if
+instanceof new null readInt readFloat print
+println printlnx printx protected return this
+true while

@@ -1,0 +1,18 @@
+// Description:
+//    Procédures d’affichage
+//    Appel à print et println sans argument, avec des arguments
+//
+// Resultats:
+//    Hello
+//    World
+//    Hello1Hello2Hello3
+//    
+
+{
+   print("Hello");
+   print();
+   println();
+   println("World");
+   println("Hello1 ", "Hello2 ", "Hello3");
+}
+

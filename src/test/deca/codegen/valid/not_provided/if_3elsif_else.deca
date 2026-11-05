@@ -1,0 +1,29 @@
+// Description:
+//    Test branche conditionnelle
+//    -> if elsif elsif elsif else
+//
+// Resultats:
+//    a = 0, b = 2, c = 3
+
+{
+    int a = 0;
+    int b = 2;
+    int c = 3;
+    if (a >= b){
+        println("a >= b");
+    }
+    else if (b > c){
+        println("b > c");
+    }
+    else if (a >= c){
+        println("a >= c");
+    }
+    else if (b == c){
+        println("b == c");
+    }
+    else{
+        println("a = ", a, ", b = ", b, ", c = ", c);
+    }
+}
+    
+

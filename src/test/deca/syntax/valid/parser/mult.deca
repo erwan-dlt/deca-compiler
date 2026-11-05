@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe pour mult_expr
+//
+// Resultats :
+// ok
+
+{
+    x = y * z / 2;
+}

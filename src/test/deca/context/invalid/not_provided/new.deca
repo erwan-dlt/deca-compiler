@@ -1,0 +1,13 @@
+// Description:
+//    Utilisation de new pour une classe qui n'existe pas
+//
+// Resultats:
+//    Erreur : 
+
+class A{
+    int a;
+}
+
+{
+    B b = new B();
+}

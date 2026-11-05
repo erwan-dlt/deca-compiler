@@ -1,0 +1,10 @@
+// Description :
+// test d'une méthode avec du code en assembleur (string)
+//
+// Resultats :
+// ok
+
+class TestAsm {
+    void fonctionAsm(int x)
+        asm("LOAD 1 R0");
+}

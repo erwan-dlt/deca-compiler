@@ -1,0 +1,16 @@
+// Description :
+// Appel d'une méthode avec le mauvais nombre de paramètres
+//
+// Résultat :
+//      Erreur : ligne 15 - le nombre de paramètres est incorrect
+
+class A {
+    void method(int a) {
+        print(a);
+    }
+}
+
+{
+    A a = new A();
+    a.method(); 
+}

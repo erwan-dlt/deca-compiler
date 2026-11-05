@@ -1,0 +1,38 @@
+// Description :
+// test pour la déclaration de classes avec méthodes
+//
+// Resultats :
+//   ok
+//   ok
+
+class A{
+    boolean a = true;
+
+    void setA(boolean a){
+        this.a = a;
+    }
+
+    boolean getA(){
+        return a;
+    }
+}
+
+{
+    A a = new A();
+    
+    if (a.getA()){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+    a.setA(false);
+
+    if (!a.getA()){
+        println("ok");
+    } else {
+        println("Erreur");
+    }
+
+}
+

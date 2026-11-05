@@ -1,0 +1,21 @@
+// Description:
+//    Test branche conditionnelle
+//    -> if elsif elsif elsif
+//
+// Resultats:
+//    a est impair
+
+{
+    int a = 57;
+    if (a == 0){
+        print("a = 0");
+    }
+    else if (a % 2 == 0){
+        print("a est pair");
+    }
+    else if (a % 2 == 1){
+        println("a est impair");
+    }
+}
+    
+

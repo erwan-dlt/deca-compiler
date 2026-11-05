@@ -1,0 +1,16 @@
+// Description :
+// Test contextuellement incorrect : on dit que b est égal à a casté par A mais b est de classe B
+//
+// Résultat :
+//      Erreur : problème de cast
+
+class A{
+}
+
+class B extends A{
+}
+
+{
+    A a = new A();
+    B b = (A)(a);
+}

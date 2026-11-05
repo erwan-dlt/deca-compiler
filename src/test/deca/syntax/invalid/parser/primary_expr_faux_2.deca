@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (readFloat doit être appelé sans arguments)
+//
+// Resultats:
+//    ligne 10 : Erreur, argument dans readFloat
+
+{
+    readFloat(5);
+}

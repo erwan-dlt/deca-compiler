@@ -1,0 +1,18 @@
+// Description:
+//    Test incorrect : on déclare une classe, on l'étend, on crée une instance de la classe mère
+//     et on essaie de lui attribuer une instance de la classe fille
+//
+// Résultats:
+//    Erreur : la classe A n'a pas d'attribut b
+
+class A {
+}
+
+class B extends A {
+    int b;
+}
+
+{
+    A a = new A();
+    a.b = 2;
+}

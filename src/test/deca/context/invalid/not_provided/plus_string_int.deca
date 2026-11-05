@@ -1,0 +1,10 @@
+// Description:
+//    Signature des opérateurs						
+//    -> Opérateur arithmétique avec autre chose que des int ou float
+//
+// Resultats:
+//    Erreur : 
+
+{
+    "hello" + 2;
+}

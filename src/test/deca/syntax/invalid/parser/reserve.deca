@@ -1,0 +1,9 @@
+// Description :
+// test de syntaxe faux (utilisation d'un mot reserve)
+//
+// Resultats :
+//      Erreur : this est un mot reservé
+
+{
+    int this = 3;
+}

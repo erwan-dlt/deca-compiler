@@ -1,0 +1,11 @@
+// Description :
+// Méthode qui retourne un string
+//
+// Résultat :
+//      Erreur : ligne 18 - type de retour incorrect
+
+class A {
+    String method() {
+        return "hello";
+    }
+}

@@ -1,0 +1,26 @@
+// Description:
+//    Procédures d’affichage
+//    Appel à printx et printlnx sans argument, 
+//    avec des arguments entiers et avec des arguments flottants
+//
+// Resultats:
+//   10
+//
+//   111.10000e+01
+//   1.20000e+01
+//   1.30000e+011.40000e+011.50000e+01
+//   1.60000e+01
+
+
+{
+    printx(10);
+    printx();
+    printlnx();
+    printlnx();
+    printlnx(11, 11.0);
+    printlnx(12.0);
+    printlnx(13.0, " ", 14.0, " ", 15.0);
+    printx(16.0);
+    printlnx();
+}
+

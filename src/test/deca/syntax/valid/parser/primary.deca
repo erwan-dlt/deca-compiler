@@ -1,0 +1,12 @@
+// Description :
+// test de syntaxe pour primary_expr
+//
+// Resultats :
+// ok
+
+{
+    (x + y);
+    readInt();
+    readFloat();
+    new MyClass();
+}

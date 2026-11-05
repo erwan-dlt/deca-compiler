@@ -1,0 +1,8 @@
+// Description :
+// test de syntaxe pour bloc d'instructions vide
+//
+// Resultats :
+// ok
+
+{
+}

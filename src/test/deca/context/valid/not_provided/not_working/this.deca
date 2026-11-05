@@ -1,0 +1,13 @@
+// Description:
+//    Utilisation de this
+//
+// Resultats:
+//    ok
+
+class A{
+    int a;
+
+    void A(int a){
+        this.a = a;
+    }
+}

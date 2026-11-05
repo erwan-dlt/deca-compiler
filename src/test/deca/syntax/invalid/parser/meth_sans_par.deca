@@ -1,0 +1,14 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (la méthode de la classe n'a pas de parentheses)
+//
+// Resultats:
+//    ligne 9 : Erreur, parenthèses des paramètres de la méthode manquantes
+
+class A{
+    int method {
+        return 1;
+    }
+}
+

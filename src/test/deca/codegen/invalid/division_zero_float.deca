@@ -1,0 +1,14 @@
+// Description:
+//    Débordements lors de l’évaluation des expressions			
+//    Division par 0.0
+//
+// Resultats:
+//    Erreur : 
+
+{
+    float x = 10.0;
+    float y;
+    y = x / 0.0;
+    println(y);
+}
+

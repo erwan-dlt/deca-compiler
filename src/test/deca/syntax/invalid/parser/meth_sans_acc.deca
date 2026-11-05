@@ -1,0 +1,13 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (la méthode de la classe n'a pas d'accolades)
+//
+// Resultats:
+//    ligne 9 : Erreur, accolades de la méthode manquantes
+
+class A{
+    int method()
+        return 1;
+}
+

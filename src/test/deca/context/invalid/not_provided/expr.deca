@@ -1,0 +1,12 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (expression qui mélange des types)
+//
+// Resultats:
+//    ligne 10 : Erreur
+
+{
+    int x = 1 > true && true || 2.0 > 8;
+}
+

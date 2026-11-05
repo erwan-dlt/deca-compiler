@@ -1,0 +1,11 @@
+// Description:
+//    Signature des opérateurs						
+//    -> print d'un bool
+//
+// Resultats:
+//    Erreur : 
+
+{
+    bool x = true;
+    print(x);
+}

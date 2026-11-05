@@ -1,0 +1,12 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (classe sans nom)
+//
+// Resultats:
+//    ligne 9 : Erreur, nom de classe manquant
+
+class {
+    int x = 1;
+}
+

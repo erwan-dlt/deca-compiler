@@ -1,0 +1,11 @@
+// Description:
+//    test de programme correct lexicalement 
+//    mais incorrect syntaxiquement
+//    (pour assigner une expression on utilise = et pas ==)
+//
+// Resultats:
+//    ligne 10 : Erreur, utilisation de == pour assigner une expression
+
+{
+    int x == 1;
+}

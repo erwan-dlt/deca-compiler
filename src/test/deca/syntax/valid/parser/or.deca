@@ -1,0 +1,11 @@
+// Description :
+// test de syntaxe pour or_expr
+//
+// Resultats :
+// ok
+
+{
+    if (x > 10 || y < 5) {
+        print("Condition OK");
+    }
+}

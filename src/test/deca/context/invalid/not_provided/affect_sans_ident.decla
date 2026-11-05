@@ -1,0 +1,10 @@
+// Description:
+//    Signature des opérateurs						
+//    -> affection sans identificateur
+//
+// Resultats:
+//    Erreur : 
+
+{
+    int = 2;
+}

@@ -1,0 +1,23 @@
+// Description:
+//    Programme récursif : calcul de !10
+//
+// Resultats:
+//     3628800
+
+
+class Factorielle {
+    
+    int calcul(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+        }
+    }
+}
+
+{
+    int n;
+    n = 10;
+    Factorielle fact = new Factorielle(); 
+    println(fact.calcul(n));             
+}

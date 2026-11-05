@@ -1,0 +1,15 @@
+// Description:
+//    Débordements lors de l’évaluation des expressions
+//    Débordement pour les opérations arithmétiques sur les float
+//
+// Resultats:
+//      Erreur : 
+//
+
+
+{
+   float a = 1.0e25;
+   float b = 1.0e25;
+   float c = a * b;
+   println(c);
+}

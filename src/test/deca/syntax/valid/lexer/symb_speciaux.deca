@@ -1,0 +1,7 @@
+// Description :
+// test de lexique : symboles spéciaux
+//
+// Resultats :
+// ok
+
+< > = + - * / % . , ( ) { } ! ; == != >= <= && ||

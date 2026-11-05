@@ -1,0 +1,11 @@
+// Description :
+// Méthode qui retourne le mauvais type (attend un booleen, retourne un float)
+//
+// Résultat :
+//      Erreur : ligne 9 - type de retour incorrect
+
+class A {
+    boolean method(float a) {
+        return a;
+    }
+}

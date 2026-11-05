@@ -1,0 +1,25 @@
+// Description:
+//    Test pour la démonstration de la soutenance
+//    l'utilisateur doit deviner un nombre entre 0 et 10, 
+//    le programme lui donne l'information de si le nombre est plus grand ou plus petit
+//
+
+
+{
+    int nbr = 8;
+    int x = 0;
+    while (x != nbr){
+        println("Proposez un nombre entre 1 et 10 !");
+        x = readInt();
+        if (!(1 <= x) && !(x <= 10)){
+            println("Le nombre doit être compris entre 1 et 10.");
+        }
+        if (nbr < x){
+            println("Le nombre est plus petit.");
+        }
+        if (nbr > x){
+            println("Le nombre est plus grand.");
+        }
+    }
+    println("Le nombre était bien ", nbr);
+}

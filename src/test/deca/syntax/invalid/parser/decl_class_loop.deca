@@ -1,0 +1,11 @@
+// Description:
+//    Déclaration de classe dans une classe
+//
+// Resultats:
+//    Erreur : déclaration de classe dans une classe
+
+class A{
+    class B{
+    }
+}
+

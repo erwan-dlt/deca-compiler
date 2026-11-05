@@ -1,0 +1,23 @@
+// Description:
+//    test contextuellement correct des paramètres d'une méthode
+//
+// Resultats:
+//    ok
+
+class A{
+    void m(int a, int b){
+        println(a,b);
+    }
+
+    void n(float a, float b){
+        println(a,b);
+    }
+
+    void o(int a, float b){
+        println(a,b);
+    }
+
+    boolean p(boolean a, boolean b){
+        return a && b;
+    }
+}
